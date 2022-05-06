@@ -459,7 +459,7 @@ server.all('/', async (req, res) => {
 		res.send("Couldn't get the access token!");
 		console.log("Couldn't get the access token!");
 });
-server.listen(3000, () => {
+server.listen(parseInt(process.env.LOCAL_SERVER_PORT), () => {
 	console.log('Express Server ready!');
 	if (!fs.existsSync('./.tokens.json')) {
 		console.log(`Open the following Website to authenticate: https://id.twitch.tv/oauth2/authorize?client_id=${process.env.TWITCH_CLIENT_ID}&redirect_uri=http%3A%2F%2Flocalhost%3A${process.env.LOCAL_SERVER_PORT}&response_type=code&scope=channel%3Aread%3Apolls%20channel%3Aread%3Apredictions%20channel%3Amanage%3Apolls%20channel%3Amanage%3Apredictions`);
