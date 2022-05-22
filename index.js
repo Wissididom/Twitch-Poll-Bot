@@ -86,7 +86,7 @@ async function createPoll(interaction) {
 	}
 	const unit = interaction.options.getString('unit');
 	let durationMulitplier = 1;
-	if (unit.toLowerCase() == 'minutes')
+	if (unit && unit.toLowerCase() == 'minutes')
 		durationMultiplier = 60;
 	validate(false).then(async (value) => {
 		fetch('https://api.twitch.tv/helix/polls', {
