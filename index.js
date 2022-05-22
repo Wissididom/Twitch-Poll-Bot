@@ -85,7 +85,7 @@ async function createPoll(interaction) {
 		});
 	}
 	const unit = interaction.options.getString('unit');
-	let durationMulitplier = 1;
+	let durationMultiplier = 1;
 	if (unit && unit.toLowerCase() == 'minutes')
 		durationMultiplier = 60;
 	validate(false).then(async (value) => {
